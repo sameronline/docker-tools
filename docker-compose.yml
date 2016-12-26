@@ -1,0 +1,25 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  watchtower:
+    image: centurylink/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#  dbgpproxy:
+#    restart: "always"
+#    image: christianbladescb/dbgpproxy
+#    container_name: dbgp-proxy
+#    expose:
+#        - "9000"
+#    ports:
+#        - "9001:9001"
+#    environment:
+#        DOCKER_HOST: 'tcp://10.0.75.1:2375'
