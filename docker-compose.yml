@@ -1,8 +1,8 @@
 version: '2'
 services:
-  nginx-proxy:
+  proxy:
     image: jwilder/nginx-proxy
-    container_name: nginx-proxy
+    container_name: proxy
     ports:
       - "80:80"
     volumes:
