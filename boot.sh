@@ -1,3 +1,4 @@
+#!/bin/bash
 docker-compose stop
 docker pull jwilder/nginx-proxy
 docker pull centurylink/watchtower
